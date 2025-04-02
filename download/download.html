@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../icons/avatar.webp" type="image/webp" />
+    <title>Waiting for download...</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js"></script>
+    <script src="https://cmp.gatekeeperconsent.com/min.js" data-cfasync="false"></script>
+    <script src="https://the.gatekeeperconsent.com/cmp.min.js" data-cfasync="false"></script>
+    <script async src="//www.ezojs.com/ezoic/sa.min.js"></script>
+
+    <script>
+        window.addEventListener('load', () => {
+            quicklink.listen();
+        });
+
+        window.ezstandalone = window.ezstandalone || {};
+        ezstandalone.cmd = ezstandalone.cmd || [];
+    </script>
+    <style>
+        #countdown { font-weight: bold; color: white; }
+        .download-list { margin-top: 20px; display: none; }
+        .download-btn:hover { background: #0056b3; }
+        #recaptcha-container { display: none; margin-top: 20px; }
+    </style>
+</head>
+<body>
+  <!-- Loader -->
+  <div class="loader" id="loader">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <div id="contents">
+    <div class="container">
+        <h1 id="title">Checking...</h1>
+        <p>Link is being prepared in <span id="countdown">15</span> seconds...</p>
+      <div class="loader"></div>
+        <div id="download-container" class="download-list"></div>
+    </div>
+<footer class="footer">
+    <p>&copy; 2025 Vinny gamer official. All rights reserved.</p>
+</footer>
+</div>
+<script>
+    const downloadList = [
+    {
+        id: "AZZRkD8V49Z5",
+        title: "Vinny's Vein Miner & Tree Capitator",
+        links: [
+            { title: "Vinny's Vein Miner & Tree Capitator v1.0", url: "https://shrinkme.ink/Vein-Miner-Tree-Capitator" },
+            { title: "Vinny's Vein Miner & Tree Capitator v1.1", url: "https://shrinkme.ink/vein-miner-tree-capitator-v1-1" }
+        ]
+    },
+    {
+        id: "dshjXiRbo6VO",
+        title: "Speed Counter Add-on",
+        links: [
+            { title: "Speed Counter Add-on", url: "https://shrinkme.ink/speed-counter-add-on" }
+        ]
+    },
+    {
+        id: "GiX1TZjqc3pd",
+        title: "World Border Add-on",
+        links: [
+            { title: "World Border Add-on", url: "https://shrinkme.ink/world-border" }
+        ]
+    }
+    
+];
+const urlParams = new URLSearchParams(window.location.search);
+const id = urlParams.get("id");
+const file = downloadList.find(item => item.id === id);
+
+if (file) {
+    document.getElementById("title").textContent = "Downloading : " + file.title;
+    let countdown = 15;
+
+    const interval = setInterval(() => {
+        countdown--;
+        document.getElementById("countdown").textContent = countdown;
+        if (countdown <= 0) {
+            clearInterval(interval);
+            document.getElementById("title").textContent = "Your downloads are ready!";
+            document.querySelector(".loader").style.display = "none";
+            showDownloadLinks();
+        }
+    }, 1000);
+} else {
+    document.getElementById("title").textContent = "Invalid ID!";
+}
+
+function showDownloadLinks() {
+    if (file) {
+        let downloadHTML = "";
+        file.links.forEach(link => {
+            downloadHTML += `<a href="${link.url}">${link.title}</a>`;
+        });
+        document.getElementById("download-container").innerHTML = downloadHTML;
+        document.getElementById("download-container").style.display = "block";
+    }
+}
+</script>
+<script defer src="../main.js"></script>
+<script defer src="../other.js"></script>
+</body>
+</html>
