@@ -1,0 +1,58 @@
+@font-face { font-family: 'OpenSans'; src: url('fonts/OpenSans-VariableFont_wdth,wght.woff') format('woff'); font-style: normal; font-display: fallback; }
+body { font-family: 'OpenSans', cursive; margin: 0; padding: 0 0 60px; background-color: #2C2C2C; color: #B3B3B3; text-align: center; transition: padding-bottom 0.3s ease; user-select: none; line-height: 1.2; font-size: clamp(1.8rem, calc(7vw + 1rem), 5rem)}
+h1, h2, h3, h4, h5, h6 { font-weight: bold; color: white; }
+header { background: #1A1A1A; padding: 20px; border-bottom: 5px solid #B3B3B3; }
+.avatar { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto 10px; border: 4px solid #FFFFFF; }
+h1 { font-size: clamp(1.8rem, 3.5vw, 2.5rem); }
+h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); }
+h3 { font-size: clamp(1.4rem, 2.5vw, 1.9rem); }
+h4 { font-size: clamp(1.2rem, 2vw, 1.6rem); }
+h5 { font-size: clamp(1.1rem, 1.5vw, 1.3rem); }
+h6 { font-size: clamp(1rem, 1.2vw, 1.1rem); }
+p {
+  font-size: clamp(1rem, 1.2vw, 1.1rem);
+}
+.text-shadow { font-weight: bold; color: #ff6347; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5), 0 0 25px rgba(255, 99, 71, 0.7), 0 0 5px rgba(255, 99, 71, 0.7); }
+.social-icons a { color: #FFFFFF; font-size: 24px; margin: 0 10px; text-decoration: none; }
+.social-icons a:hover { color: #FFD700; }
+.container { background: #1A1A1A; padding: 10px; max-width: 1000px; margin: 0 auto; border: 3px solid #B3B3B3; box-shadow: 5px 5px 0 #000000; border-radius: 5px; }
+#contents { display: none; }
+h2 { font-size: 18px; text-shadow: 2px 2px #000000; }
+p { color: #B3B3B3; }
+.addon-list { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; padding: 5px; }
+.addon-item { flex-wrap: wrap; background: #333; border: 3px solid #B3B3B3; padding: clamp(1rem, 3vw, 2rem); max-width: 400px; width: auto; border-radius: 20px; box-shadow: 5px 5px 0 #000; text-align: center; transition: transform 0.2s ease-in-out; padding: 5px;}
+.addon-item img { width: clamp(100px, 80vw, 1000px); max-width: 100%; height: auto; border-radius: 5px; }
+footer { position: fixed; bottom: 0; left: 0; width: 100%; text-align: center; padding: 10px; background-color: #1A1A1A; color: white; border-top: 3px solid #B3B3B3; z-index: 9999; }
+a { text-decoration: none; }
+.download-btn { position: relative; background-color: #1a1a1a; color: white; padding: 12px 24px; border-radius: 8px; font-size: 16px; cursor: pointer; text-decoration: none; display: inline-block; z-index: 1; overflow: hidden; border: 2px solid transparent; }
+.download-btn::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; padding: 2px; background: linear-gradient(45deg, red, orange, yellow, green, cyan, blue, violet, red); background-size: 400%; border-radius: inherit; z-index: -1; animation: rainbowBorder 6s linear infinite; mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); mask-composite: exclude; -webkit-mask-composite: destination-out; }
+.download-btn:hover { background-color: #333333; }
+@keyframes rainbowBorder { 0% { background-position: 0% 50%; }
+50% { background-position: 100% 50%; }
+100% { background-position: 0% 50%; }
+}
+@keyframes pop { 0% { transform: scale(0.8); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+.video-container { position: relative; width: 100%; max-width: 560px; aspect-ratio: 16 / 9; margin: auto; display: flex; justify-content: center; align-items: center; }
+.video-container iframe { border-radius: 20px; position: absolute; width: 100%; height: 100%; top: 0; left: 0; }
+p, a, div, span, footer, header { font-size: inherit; }
+:root { --color: #a5a5b0; --size: 70px; }
+.loader { width: var(--size); height: var(--size); display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 9999; }
+.loader span { width: 100%; height: 100%; background-color: var(--color); animation: blink 0.6s alternate infinite linear; }
+@keyframes blink { 0% { opacity: 0.3; transform: scale(0.5) rotate(5deg); } 50% { opacity: 1; transform: scale(1); } }
+.thumbnail { width: clamp(150px, 80vw, 1000px); height: auto; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); transition: transform 0.3s ease, box-shadow 0.3s ease; padding: 5px; border-radius: 20px; }
+.thumbnail:hover { transform: scale(1.1); box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); }
+.download-list a { color: #1E90FF; text-decoration: none; display: block; margin-bottom: 10px; }
+.download-list a:hover { color: darkblue; }
+.note { background-color: #303030; border-left: 5px solid grey; padding: 10px 15px; margin: 10px 0; font-size: 14px; color: #333; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); border-radius: 5px; }
+#illustration { width: clamp(200px, 80vw, 1000px); max-width: 600px; height: auto; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); display: block; margin: 20px auto; }
+.center { text-align: center; padding-bottom: 10px; }
+pre { user-select: all; background-color: black; padding: 10px; border-radius: 5px; border: 1px solid #ddd; font-family: monospace; }
+img { pointer-events: none; -webkit-user-drag: none; user-select: none; touch-action: none; }
+button { position: relative; background-color: #1a1a1a; color: white; padding: 12px 24px; border-radius: 8px; font-size: 16px; cursor: pointer; text-decoration: none; display: inline-block; z-index: 1; overflow: hidden; border: 2px solid transparent; }
+button::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; padding: 2px; background: linear-gradient(45deg, red, orange, yellow, green, cyan, blue, violet, red); background-size: 400%; border-radius: inherit; z-index: -1; animation: rainbowBorder 6s linear infinite; mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); mask-composite: exclude; -webkit-mask-composite: destination-out; }
+button:hover { background-color: #333333; }
+@keyframes rainbowBorder { 0% { background-position: 0% 50%; }
+50% { background-position: 100% 50%; }
+100% { background-position: 0% 50%; }
+}
+@keyframes pop { 0% { transform: scale(0.8); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
